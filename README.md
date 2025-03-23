@@ -1,10 +1,10 @@
 ## Products API
 
 ## 🛠️ Tecnologias
-Spring Boot (Spring Web, Spring Data JPA, Spring Security)
-Banco de Dados (PostgreSQL ou MySQL)
-Hibernate (ORM para gerenciar o banco de dados)
-Lombok (para reduzir boilerplate)
+- Spring Boot (Spring Web, Spring Data JPA, Spring Security)
+- Banco de Dados (PostgreSQL ou MySQL)
+- Hibernate (ORM para gerenciar o banco de dados)
+- Lombok (para reduzir boilerplate)
 
 ## 📝 Requisitos do Sistema
 O sistema permite que usuários cadastrados e autenticados gerenciem um catálogo de produtos.
