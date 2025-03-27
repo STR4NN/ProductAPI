@@ -3,7 +3,6 @@ package com.project.product.service;
 import com.project.product.model.ProductModel;
 import com.project.product.repository.ProductRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
@@ -27,13 +26,23 @@ public class ProductService {
         return productRepository.save(productModel);
     }
 
-    public ProductModel updateProduct(@PathVariable  Long id, ProductRepository repository){
-        listProducts();
-        productRepository.findById(id);
-        Optional<>
-       productRepository.saveAll();
-        return
+    public void updateProduct(@PathVariable
+          Long id, ProductModel updatedProduct ){
 
+        Optional<ProductModel>  productModel =  productRepository.findById(id);
+
+            if(productModel.isPresent()){
+                ProductModel productModel1 = productModel.get();
+
+                productModel1.setName(updatedProduct.getName());
+                productModel1.setDescription(updatedProduct.getDescription());
+                productModel1.setPrice(updatedProduct.getPrice());
+                productModel1.setQuantity(updatedProduct.getQuantity());
+
+                productRepository.save(productModel1);
+
+            }
+        listProducts();
     }
 
     public void deleteProduct(@PathVariable Long id){

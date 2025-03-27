@@ -1,5 +1,6 @@
 package com.project.product;
 
+import com.project.product.model.ProductModel;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
