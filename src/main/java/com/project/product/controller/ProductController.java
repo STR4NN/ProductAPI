@@ -5,7 +5,7 @@ import com.project.product.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*") // Permite requisições de qualquer dominio.
 @RestController
 @RequestMapping("/store")
 
@@ -25,10 +25,17 @@ public class ProductController {
        return productsService.listProducts();
 
     }
+    @GetMapping("/{id}")
+        public List<ProductModel> listProductsById() {
+            return productsService.listProducts();
+
+    }
+    // Adiciona informações externas para o BD.
     @PostMapping
     public ProductModel createProducts(@RequestBody  ProductModel productModel){
         return  productsService.createProducts(productModel);
     }
+    // Metodo para atualizar informações da API via ID.
     @PutMapping("/{id}")
     public void updateProduct(@PathVariable Long id,
                               @RequestBody ProductModel updatedProduct
@@ -40,6 +47,8 @@ public class ProductController {
           productsService.updateProduct(id,updatedProduct);
           listProducts();
     }
+
+    // Metodo para deletar dados da API.
     @DeleteMapping("/{id}")
     public List<ProductModel> deleteProduct(@PathVariable Long id){
         productsService.deleteProduct(id);
