@@ -18,12 +18,12 @@ public class ProductService {
     }
 
     public List<ProductModel> listProducts(){
-        return productRepository.findAll();
+        return productRepository.findAll(); // Select ALL
     }
 
     public ProductModel createProducts(ProductModel productModel){
         listProducts();
-        return productRepository.save(productModel);
+        return productRepository.save(productModel); // Insert Into
     }
 
     public void updateProduct(@PathVariable
@@ -40,7 +40,8 @@ public class ProductService {
                 productModel1.setQuantity(updatedProduct.getQuantity());
 
                 productRepository.save(productModel1);
-
+            }else{
+                throw new RuntimeException();
             }
         listProducts();
     }

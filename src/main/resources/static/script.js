@@ -1,16 +1,16 @@
 async function loadProducts() {
-    const response = await fetch("http://localhost:8080/store");
-    const products = await response.json();
+    const response = await fetch("http://localhost:8080/store"); // Conexão com a URL
+    const products = await response.json(); // Faz com que receba um jSON
+
     const productList = document.getElementById("productList");
 
     productList.innerHTML = ""; // Limpa a lista antes de atualizar
 
     products.forEach(product => {
         const li = document.createElement("li");
-        li.innerText = `${product.name} - R$ ${product.price} - ${product.description} - 
-        ${product.quantity}`;
+        li.innerText = `id: ${product.id} nome: ${product.name} \n- R$ ${product.price} \n ${product.description} - 
+         quantidade:  ${product.quantity}`;
         productList.appendChild(li);
     });
 }
-
 loadProducts();
