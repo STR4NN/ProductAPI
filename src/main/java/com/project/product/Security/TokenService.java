@@ -26,7 +26,9 @@ public class TokenService {
                     .withSubject(user.getEmail()) // Sujeito para quem sera gerado
                     .withExpiresAt(this.generateExpiresDate()) // Tempo de expiração do token
                     .sign(algorithm);// Sujeito
+            System.out.println(token);
                 return token;
+
         }
         catch (JWTCreationException exception) { // Lança exceção
              throw new RuntimeException("Error while authenticating");

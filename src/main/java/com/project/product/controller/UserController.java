@@ -1,5 +1,6 @@
 package com.project.product.controller;
 
+import com.project.product.Security.TokenService;
 import com.project.product.model.UserModel;
 import com.project.product.service.UserService;
 import org.apache.catalina.User;
@@ -12,6 +13,7 @@ import java.util.List;
 @CrossOrigin
 public class UserController {
     UserService userService;
+    TokenService tokenService;
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -19,6 +21,7 @@ public class UserController {
 
     @GetMapping
     public List<UserModel> listUsers(){
+
         return userService.listUsers();
     }
     @PostMapping
