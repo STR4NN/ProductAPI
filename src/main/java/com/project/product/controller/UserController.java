@@ -13,7 +13,6 @@ import java.util.List;
 @CrossOrigin
 public class UserController {
     UserService userService;
-    TokenService tokenService;
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -21,7 +20,6 @@ public class UserController {
 
     @GetMapping
     public List<UserModel> listUsers(){
-
         return userService.listUsers();
     }
     @PostMapping
