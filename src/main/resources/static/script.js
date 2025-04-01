@@ -8,8 +8,12 @@ async function loadProducts() {
 
     products.forEach(product => {
         const li = document.createElement("li");
-        li.innerText = `id: ${product.id} nome: ${product.name} \n- R$ ${product.price} \n ${product.description} - 
-         quantidade:  ${product.quantity}`;
+        // Pega os valores do JSON e aicionam ao LI
+        li.innerText = `id: ${product.id}
+         nome: ${product.name} \n
+         - R$ ${product.price} \n
+          ${product.description} - 
+         quantidade: ${product.quantity}`;
         productList.appendChild(li);
     });
 }
