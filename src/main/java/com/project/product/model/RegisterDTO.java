@@ -1,4 +1,6 @@
 package com.project.product.model;
 
-public record RegisterDTO(String login, String senha, String role) {
+import org.apache.catalina.User;
+
+public record RegisterDTO(String login, String senha, UserRoles role) {
 }

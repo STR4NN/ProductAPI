@@ -22,6 +22,12 @@ public class UserModel implements UserDetails {
     private String token;
     private UserRoles role;
 
+    public UserModel(String email, String password, UserRoles role) {
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+
     public String getToken() {
         return token;
     }
