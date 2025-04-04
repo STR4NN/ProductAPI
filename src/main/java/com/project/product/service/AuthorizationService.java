@@ -11,6 +11,8 @@ public class AuthorizationService implements UserDetailsService {
     UserRepository userRepository;
 
     @Override
+    // Resgata no banco um usuario pelo email
+    // Basicamente mostra informações do banco para o Security;
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         return userRepository.findByEmail(email);
     }

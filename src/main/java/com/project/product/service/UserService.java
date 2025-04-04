@@ -1,5 +1,6 @@
 package com.project.product.service;
 
+import com.project.product.Security.TokenService;
 import com.project.product.model.UserModel;
 import com.project.product.repository.UserRepository;
 import org.apache.catalina.User;
@@ -13,11 +14,16 @@ public class UserService {
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+    TokenService tokenService;
+
 
     public List<UserModel> listUsers(){
         return userRepository.findAll();
     }
     public UserModel createUsers(UserModel user){
+
         return userRepository.save(user);
+
+
     }
 }

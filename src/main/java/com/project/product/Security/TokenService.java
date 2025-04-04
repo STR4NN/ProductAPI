@@ -20,6 +20,8 @@ public class TokenService {
     public String generateToken(UserModel user){
 
         try { // Cria o Token para autenticação
+
+            // Algoritimo de decodificação
             Algorithm algorithm = Algorithm.HMAC256(secret);
             String token = JWT.create()
                     .withIssuer("product") // Nome do aplicativo, quem esta emitindo

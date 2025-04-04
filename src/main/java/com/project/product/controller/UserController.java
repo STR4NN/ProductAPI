@@ -12,6 +12,8 @@ import java.util.List;
 @RequestMapping("/login")
 @CrossOrigin
 public class UserController {
+
+
     UserService userService;
 
     public UserController(UserService userService) {
@@ -24,6 +26,7 @@ public class UserController {
     }
     @PostMapping
     public UserModel createUsers(@RequestBody UserModel user){
+
         return userService.createUsers(user);
     }
 }
